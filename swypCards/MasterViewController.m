@@ -7,8 +7,9 @@
 //
 
 #import "MasterViewController.h"
-
 #import "DetailViewController.h"
+#import "Card.h"
+#import "exoNSDateAddtions.h"
 
 @interface MasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -275,9 +276,9 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *managedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text			= [[managedObject valueForKey:@"timeStamp"] description];
-	cell.detailTextLabel.text	= [[managedObject valueForKey:@"timeStamp"] description];
+    Card *managedCard = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text			= [managedCard signature];
+	cell.detailTextLabel.text	= [[managedCard timeStamp] formatAsShortString];
 }
 
 - (void)insertNewObject

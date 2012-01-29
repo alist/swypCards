@@ -23,6 +23,9 @@
 		7902D6F214D4B82000C71731 /* DetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7902D6F014D4B82000C71731 /* DetailViewController_iPad.xib */; };
 		7902D6FC14D4FE0F00C71731 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 7902D6FB14D4FE0F00C71731 /* Card.m */; };
 		7902D70514D4FF9800C71731 /* cardCreatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7902D70414D4FF9800C71731 /* cardCreatorViewController.m */; };
+		7902D74F14D5018600C71731 /* exoNSDateAddtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7902D74E14D5018600C71731 /* exoNSDateAddtions.m */; };
+		7902D75C14D5023500C71731 /* swypPhotosHud.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D75A14D5023500C71731 /* swypPhotosHud.png */; };
+		7902D75D14D5023500C71731 /* swypPhotosHud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D75B14D5023500C71731 /* swypPhotosHud@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,10 @@
 		7902D6FB14D4FE0F00C71731 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 		7902D70314D4FF9800C71731 /* cardCreatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cardCreatorViewController.h; sourceTree = "<group>"; };
 		7902D70414D4FF9800C71731 /* cardCreatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cardCreatorViewController.m; sourceTree = "<group>"; };
+		7902D74D14D5018600C71731 /* exoNSDateAddtions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exoNSDateAddtions.h; sourceTree = "<group>"; };
+		7902D74E14D5018600C71731 /* exoNSDateAddtions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = exoNSDateAddtions.m; sourceTree = "<group>"; };
+		7902D75A14D5023500C71731 /* swypPhotosHud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swypPhotosHud.png; sourceTree = "<group>"; };
+		7902D75B14D5023500C71731 /* swypPhotosHud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "swypPhotosHud@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +115,7 @@
 		7902D6D314D4B82000C71731 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7902D75014D5020100C71731 /* Resources */,
 				7902D6D414D4B82000C71731 /* swypCards-Info.plist */,
 				7902D6D514D4B82000C71731 /* InfoPlist.strings */,
 				7902D6D814D4B82000C71731 /* main.m */,
@@ -128,6 +136,8 @@
 		7902D6F914D4FDE100C71731 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				7902D74D14D5018600C71731 /* exoNSDateAddtions.h */,
+				7902D74E14D5018600C71731 /* exoNSDateAddtions.m */,
 				7902D70614D5005400C71731 /* Data */,
 				7902D6DB14D4B82000C71731 /* AppDelegate.h */,
 				7902D6DC14D4B82000C71731 /* AppDelegate.m */,
@@ -167,6 +177,15 @@
 				7902D6FB14D4FE0F00C71731 /* Card.m */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		7902D75014D5020100C71731 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7902D75A14D5023500C71731 /* swypPhotosHud.png */,
+				7902D75B14D5023500C71731 /* swypPhotosHud@2x.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +244,8 @@
 				7902D6EC14D4B82000C71731 /* MasterViewController_iPad.xib in Resources */,
 				7902D6EF14D4B82000C71731 /* DetailViewController_iPhone.xib in Resources */,
 				7902D6F214D4B82000C71731 /* DetailViewController_iPad.xib in Resources */,
+				7902D75C14D5023500C71731 /* swypPhotosHud.png in Resources */,
+				7902D75D14D5023500C71731 /* swypPhotosHud@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +263,7 @@
 				7902D6E614D4B82000C71731 /* DetailViewController.m in Sources */,
 				7902D6FC14D4FE0F00C71731 /* Card.m in Sources */,
 				7902D70514D4FF9800C71731 /* cardCreatorViewController.m in Sources */,
+				7902D74F14D5018600C71731 /* exoNSDateAddtions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

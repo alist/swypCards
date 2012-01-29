@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface cardCreatorViewController : UIViewController
-
+@interface cardCreatorViewController : UIViewController{
+	
+}
 @end
