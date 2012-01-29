@@ -411,6 +411,12 @@
 	if ([[discernedStream streamType] isFileType:cardFileFormat]){
 		Card * newCard	=	[NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:[self managedObjectContext]];
 		[newCard setValuesFromSerializedData:streamData];
+
+		NSError * error = nil;
+        if ([[self managedObjectContext] hasChanges] && ![[self managedObjectContext] save:&error]){
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        } 	
 	}
 }
 

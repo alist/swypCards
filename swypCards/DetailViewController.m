@@ -239,6 +239,7 @@
     [super viewDidAppear:animated];
 	
 	[[_swypWorkspace contentManager] setContentDataSource:self];
+	[_delegate datasourceSignificantlyModifiedContent:self];
 	[self frameActivateButtonWithSize:_activateSwypButton.size];
 	[UIView animateWithDuration:.5 animations:^{
 		_activateSwypButton.alpha = 1;
@@ -324,6 +325,12 @@
 	if ([[discernedStream streamType] isFileType:cardFileFormat]){
 		Card * newCard	=	[NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:_objectContext];
 		[newCard setValuesFromSerializedData:streamData];
+
+		NSError * error = nil;
+        if ([_objectContext hasChanges] && ![_objectContext save:&error]){
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        } 	
 	}
 }
 

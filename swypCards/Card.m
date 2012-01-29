@@ -31,8 +31,10 @@
 -(void) setValuesFromSerializedData:(NSData*)serializedData{
 	NSDictionary * decodedValues	=	[NSKeyedUnarchiver unarchiveObjectWithData:serializedData];
 	for (NSString * key in decodedValues.allKeys){
-		NSLog(@"Set key value: %@",key);
-		[self setValue:[decodedValues valueForKey:key] forKey:key];
+		if ([[decodedValues valueForKey:key] isKindOfClass:[NSNull class]] == NO){
+			NSLog(@"Set key value: %@",key);
+			[self setValue:[decodedValues valueForKey:key] forKey:key];
+		}
 	}
 }
 

@@ -49,6 +49,10 @@
 		7902D7C014D53A0C00C71731 /* swypPromptHud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7AE14D53A0C00C71731 /* swypPromptHud@2x.png */; };
 		7902D7C114D53A0C00C71731 /* top_curl.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7AF14D53A0C00C71731 /* top_curl.png */; };
 		7902D7C214D53A0C00C71731 /* top_curl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7B014D53A0C00C71731 /* top_curl@2x.png */; };
+		7902D85B14D55EF200C71731 /* cardsDraftIcon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D85814D55EF100C71731 /* cardsDraftIcon57.png */; };
+		7902D85C14D55EF200C71731 /* cardsDraftIcon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D85914D55EF100C71731 /* cardsDraftIcon72.png */; };
+		7902D85D14D55EF200C71731 /* cardsDraftIcon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D85A14D55EF100C71731 /* cardsDraftIcon114.png */; };
+		7902D86A14D5610D00C71731 /* Entitlements.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 7902D86914D5610D00C71731 /* Entitlements.entitlements */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +124,10 @@
 		7902D7AE14D53A0C00C71731 /* swypPromptHud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "swypPromptHud@2x.png"; sourceTree = "<group>"; };
 		7902D7AF14D53A0C00C71731 /* top_curl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_curl.png; sourceTree = "<group>"; };
 		7902D7B014D53A0C00C71731 /* top_curl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_curl@2x.png"; sourceTree = "<group>"; };
+		7902D85814D55EF100C71731 /* cardsDraftIcon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardsDraftIcon57.png; sourceTree = "<group>"; };
+		7902D85914D55EF100C71731 /* cardsDraftIcon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardsDraftIcon72.png; sourceTree = "<group>"; };
+		7902D85A14D55EF100C71731 /* cardsDraftIcon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardsDraftIcon114.png; sourceTree = "<group>"; };
+		7902D86914D5610D00C71731 /* Entitlements.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Entitlements.entitlements; path = ../Entitlements.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +193,7 @@
 		7902D6D314D4B82000C71731 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7902D86914D5610D00C71731 /* Entitlements.entitlements */,
 				7902D75014D5020100C71731 /* Resources */,
 				7902D6D414D4B82000C71731 /* swypCards-Info.plist */,
 				7902D6D514D4B82000C71731 /* InfoPlist.strings */,
@@ -253,6 +262,9 @@
 		7902D75014D5020100C71731 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7902D85814D55EF100C71731 /* cardsDraftIcon57.png */,
+				7902D85914D55EF100C71731 /* cardsDraftIcon72.png */,
+				7902D85A14D55EF100C71731 /* cardsDraftIcon114.png */,
 				7902D79E14D53A0C00C71731 /* swypBundleResources */,
 				7902D77514D50B9000C71731 /* fake_luxury.png */,
 				7902D75A14D5023500C71731 /* swypPhotosHud.png */,
@@ -389,6 +401,10 @@
 				7902D7C014D53A0C00C71731 /* swypPromptHud@2x.png in Resources */,
 				7902D7C114D53A0C00C71731 /* top_curl.png in Resources */,
 				7902D7C214D53A0C00C71731 /* top_curl@2x.png in Resources */,
+				7902D85B14D55EF200C71731 /* cardsDraftIcon57.png in Resources */,
+				7902D85C14D55EF200C71731 /* cardsDraftIcon72.png in Resources */,
+				7902D85D14D55EF200C71731 /* cardsDraftIcon114.png in Resources */,
+				7902D86A14D5610D00C71731 /* Entitlements.entitlements in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +539,43 @@
 			};
 			name = Release;
 		};
+		7902D86B14D5618600C71731 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = AdHoc;
+		};
+		7902D86C14D5618600C71731 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Entitlements.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Alexander List";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "swypCards/swypCards-Prefix.pch";
+				HEADER_SEARCH_PATHS = "./swyp/**";
+				INFOPLIST_FILE = "swypCards/swypCards-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4F25BA17-E2F9-4E86-96BD-5939DB3ACF9A";
+				WRAPPER_EXTENSION = app;
+			};
+			name = AdHoc;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -531,6 +584,7 @@
 			buildConfigurations = (
 				7902D6F314D4B82000C71731 /* Debug */,
 				7902D6F414D4B82000C71731 /* Release */,
+				7902D86B14D5618600C71731 /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -540,6 +594,7 @@
 			buildConfigurations = (
 				7902D6F614D4B82000C71731 /* Debug */,
 				7902D6F714D4B82000C71731 /* Release */,
+				7902D86C14D5618600C71731 /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
