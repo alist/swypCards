@@ -37,7 +37,7 @@ typedef enum{
 	
 	//view components
 	IBOutlet UILabel *				_cardLabel;
-	IBOutlet UIImageView *			_cardView;
+	IBOutlet UIImageView *			_cardImageView;
 	IBOutlet UITextField *			_signatureField;
 	
 	UIButton *						_activateSwypButton;

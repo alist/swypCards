@@ -13,8 +13,10 @@
 
 #import <CoreData/CoreData.h>
 
-@interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate, cardCreatorViewControllerDelegate, swypWorkspaceDelegate>{
+@interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate, cardCreatorViewControllerDelegate, swypWorkspaceDelegate, swypContentDataSourceProtocol, swypConnectionSessionDataDelegate>{
 	swypWorkspaceViewController *	_swypWorkspace;
+	
+	UIButton *	_iPhoneModeSwypPromptButton;
 }
 @property (nonatomic, readonly) swypWorkspaceViewController * swypWorkspace;
 
@@ -22,5 +24,8 @@
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
+-(void) setupCardImageViewForCurrentStateWithImage:(UIImage*)image;
+-(UIImage*)	constrainImage:(UIImage*)image toSize:(CGSize)maxSize;
 
 @end

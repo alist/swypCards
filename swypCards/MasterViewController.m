@@ -22,6 +22,20 @@
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
 
+#pragma mark - swyp
+-(void) activateSwypButtonPressed:(id)sender{
+	[self presentModalViewController:[self swypWorkspace] animated:TRUE];
+}
+
+-(void)frameActivateButtonWithSize:(CGSize)theSize {
+	CGSize thisViewSize	=	[[self view] size];
+    [_iPhoneModeSwypPromptButton setFrame:CGRectMake(((thisViewSize.width)-theSize.width)/2, thisViewSize.height-theSize.height, theSize.width, theSize.height)];
+}
+
+
+
+#pragma mark - 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -52,10 +66,27 @@
 
 	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newCardButtonPressed)];
 	self.navigationItem.rightBarButtonItem = addButton;
+	
+	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+		_iPhoneModeSwypPromptButton	=	[UIButton buttonWithType:UIButtonTypeCustom];
+		UIImage *	swypActivateImage	=	[UIImage imageNamed:@"swypPhotosHud"];
+		[_iPhoneModeSwypPromptButton setBackgroundImage:swypActivateImage forState:UIControlStateNormal];
+		_iPhoneModeSwypPromptButton.alpha = 0;
+		[self frameActivateButtonWithSize:swypActivateImage.size];
+		[_iPhoneModeSwypPromptButton addTarget:self action:@selector(activateSwypButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+		
+		UISwipeGestureRecognizer *swipeUpRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(activateSwypButtonPressed:)];
+		swipeUpRecognizer.direction = UISwipeGestureRecognizerDirectionUp;
+		[_iPhoneModeSwypPromptButton addGestureRecognizer:swipeUpRecognizer];
+		
+		[self.view addSubview:_iPhoneModeSwypPromptButton];
+	}
+	
 }
 
 - (void)viewDidUnload
 {
+	_iPhoneModeSwypPromptButton = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -69,6 +100,12 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+	[[_swypWorkspace contentManager] setContentDataSource:self];
+	[self frameActivateButtonWithSize:_iPhoneModeSwypPromptButton.size];
+	[UIView animateWithDuration:.5 animations:^{
+		_iPhoneModeSwypPromptButton.alpha = 1;
+	}];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -80,6 +117,18 @@
 {
 	[super viewDidDisappear:animated];
 }
+
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    _iPhoneModeSwypPromptButton.alpha = 0;
+}
+
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    [self frameActivateButtonWithSize:_iPhoneModeSwypPromptButton.size];
+	[UIView animateWithDuration:.5 animations:^{
+		_iPhoneModeSwypPromptButton.alpha = 1;
+	}];
+}
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -160,7 +209,8 @@
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
 	    if (!self.detailViewController) {
-	        self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController_iPhone" bundle:nil];
+			DetailViewController *detailViewController = [[DetailViewController alloc] initWithSwypWorkspace:[self swypWorkspace] managedObjectContext:[self managedObjectContext]];
+			self.detailViewController = detailViewController;
 	    }
         Card *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         self.detailViewController.cardDetailItem = selectedObject;    
@@ -340,5 +390,77 @@
 -(void)	delegateShouldDismissSwypWorkspace: (swypWorkspaceViewController*)workspace{
 	[workspace dismissModalViewControllerAnimated:TRUE];
 }
+
+#pragma mark swypConnectionSessionDataDelegate
+-(NSArray*)	supportedFileTypesForReceipt{
+	
+	return [NSArray arrayWithObjects:cardFileFormat, nil];
+}
+
+-(BOOL) delegateWillHandleDiscernedStream:(swypDiscernedInputStream*)discernedStream wantsAsData:(BOOL *)wantsProvidedAsNSData inConnectionSession:(swypConnectionSession*)session{
+	if ([[self supportedFileTypesForReceipt] containsObject:[discernedStream streamType]]){
+		*wantsProvidedAsNSData = TRUE;
+		return TRUE;
+	}
+	return FALSE;
+}
+
+-(void)	yieldedData:(NSData*)streamData discernedStream:(swypDiscernedInputStream*)discernedStream inConnectionSession:(swypConnectionSession*)session{
+	NSLog(@"GOT DATR %@!", [discernedStream streamType]);
+	
+	if ([[discernedStream streamType] isFileType:cardFileFormat]){
+		Card * newCard	=	[NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:[self managedObjectContext]];
+		[newCard setValuesFromSerializedData:streamData];
+	}
+}
+
+#pragma mark swypContentDataSourceProtocol
+- (NSArray*)		idsForAllContent{
+//	if (_cardDetailItem == nil)
+		return nil;
+//	return [NSArray arrayWithObject:@"MODEL_CURRENT_DETAILED_CARD"];
+}
+- (UIImage *)		iconImageForContentWithID: (NSString*)contentID ofMaxSize:(CGSize)maxIconSize{
+	
+	return nil;
+	/*
+	if (_cardDetailItem == nil){
+		return nil;
+	}
+	UIImage * thumbnail = nil;
+	if (_cardDetailItem.thumbnailImage == nil){
+		thumbnail = [self constrainImage:[UIImage imageWithData:[_cardDetailItem coverImage]] toSize:maxIconSize];
+		[_cardDetailItem setThumbnailImage:UIImageJPEGRepresentation(thumbnail, .8)];
+	}else{
+		thumbnail	=	[UIImage imageWithData:[_cardDetailItem thumbnailImage]];
+	}
+	return thumbnail; */
+}
+- (NSArray*)		supportedFileTypesForContentWithID: (NSString*)contentID{
+	return [NSArray arrayWithObjects:cardFileFormat,[NSString imageJPEGFileType],[NSString imagePNGFileType], nil];
+	;
+}
+- (NSInputStream*)	inputStreamForContentWithID: (NSString*)contentID fileType:	(swypFileTypeString*)type	length: (NSUInteger*)contentLengthDestOrNULL;{
+	
+	/*
+	NSData * streamData = nil;
+	if ([type isFileType:[NSString imageJPEGFileType]]){
+		streamData = [_cardDetailItem coverImage];
+	}else if ([type isFileType:[NSString imagePNGFileType]]){
+		streamData = UIImagePNGRepresentation([UIImage imageWithData:[_cardDetailItem coverImage]]);
+	}else if ([type isFileType:cardFileFormat]){
+		streamData = [_cardDetailItem serializedDataValue];
+	}
+	
+	*contentLengthDestOrNULL	=	[streamData length];
+	return [NSInputStream inputStreamWithData:streamData]; */
+}
+-(void)	setDatasourceDelegate:			(id<swypContentDataSourceDelegate>)delegate{
+//	_delegate	=	delegate;
+}
+-(id<swypContentDataSourceDelegate>)	datasourceDelegate{
+	return nil;
+}
+
 
 @end

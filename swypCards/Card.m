@@ -21,4 +21,19 @@
 	self.timeStamp	=	[NSDate date];
 }
 
+
+-(NSData*)serializedDataValue{
+	NSDictionary *allCommittedValues = [self committedValuesForKeys:nil];
+	NSData * archive	=	[NSKeyedArchiver archivedDataWithRootObject:allCommittedValues];
+	return archive;
+}
+
+-(void) setValuesFromSerializedData:(NSData*)serializedData{
+	NSDictionary * decodedValues	=	[NSKeyedUnarchiver unarchiveObjectWithData:serializedData];
+	for (NSString * key in decodedValues.allKeys){
+		NSLog(@"Set key value: %@",key);
+		[self setValue:[decodedValues valueForKey:key] forKey:key];
+	}
+}
+
 @end

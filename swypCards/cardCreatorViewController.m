@@ -19,14 +19,24 @@
 
 
 #pragma mark - View Setup
+-(void)	transitionToStep:(cardCreatorCreationStep)step{
+	
+	if (step <= cardCreatorCreationStepAddInside){
+		[UIView transitionWithView:_cardImageView duration:1 options:UIViewAnimationOptionTransitionFlipFromTop animations:^{[self setupViewForStep:step];} completion:^(BOOL finished) {
+			//			[self setupViewForStep:step];
+		}];
+	}
+	[self setupViewForStep:step];
+}
+
 -(void) setupViewForStep:(cardCreatorCreationStep)step{
 	UIImage * cardImage	=	nil;
 	switch (step) {
 		case cardCreatorCreationStepAddCover:
 			_cardLabel.text	=	NSLocalizedString(@"swyp to add a cover", @"on card creator");
 			if (_cardInCreation.coverImage == nil){
-				[_cardView setBackgroundColor:[UIColor grayColor]];
-				[_cardView setImage:nil];
+				[_cardImageView setBackgroundColor:[UIColor grayColor]];
+				[_cardImageView setImage:nil];
 			}else{
 				cardImage	=	[UIImage imageWithData:[_cardInCreation coverImage]];
 			}
@@ -34,8 +44,8 @@
 		case cardCreatorCreationStepAddInside:
 			_cardLabel.text	=	NSLocalizedString(@"swyp to add inside image", @"on card creator step two");
 			if (_cardInCreation.insideImage == nil){
-				[_cardView setBackgroundColor:[UIColor grayColor]];
-				[_cardView setImage:nil];
+				[_cardImageView setBackgroundColor:[UIColor grayColor]];
+				[_cardImageView setImage:nil];
 			}else{
 				cardImage	=	[UIImage imageWithData:[_cardInCreation insideImage]];
 			}
@@ -56,19 +66,19 @@
 
 -(void) setupCardImageViewForCurrentStateWithImage:(UIImage*)image{
 
-	CGPoint cardCenter	=	[_cardView center];
-	CGSize maxSize		=	[_cardView size];
+	CGPoint cardCenter	=	[_cardImageView center];
+	CGSize maxSize		=	[_cardImageView size];
 	
-	UIImage * properlySizedImage	=	[self constrainImage:image toSize:CGSizeMake(maxSize.width * _cardView.layer.contentsScale, maxSize.height * _cardView.layer.contentsScale)];
+	UIImage * properlySizedImage	=	[self constrainImage:image toSize:CGSizeMake(maxSize.width * _cardImageView.layer.contentsScale, maxSize.height * _cardImageView.layer.contentsScale)];
 	
-	[_cardView setSize:properlySizedImage.size];
-	[_cardView setCenter:cardCenter];
+	[_cardImageView setSize:properlySizedImage.size];
+	[_cardImageView setCenter:cardCenter];
 	
-	[_cardView setImage:properlySizedImage];
+	[_cardImageView setImage:properlySizedImage];
 	
-	CALayer	*layer	=	_cardView.layer;
+	CALayer	*layer	=	_cardImageView.layer;
 	CGMutablePathRef shadowPath		=	CGPathCreateMutable();
-	CGPathAddRect(shadowPath, NULL, CGRectMake(0, 0, _cardView.size.width, _cardView.size.height));
+	CGPathAddRect(shadowPath, NULL, CGRectMake(0, 0, _cardImageView.size.width, _cardImageView.size.height));
 	[layer setShadowPath:shadowPath];
 	CFRelease(shadowPath);
 
@@ -103,15 +113,6 @@
 }
 
 
--(void)	transitionToStep:(cardCreatorCreationStep)step{
-	
-	if (step <= cardCreatorCreationStepAddInside){
-		[UIView transitionWithView:_cardView duration:1 options:UIViewAnimationOptionTransitionFlipFromTop animations:^{[self setupViewForStep:step];} completion:^(BOOL finished) {
-//			[self setupViewForStep:step];
-		}];
-	}
-	[self setupViewForStep:step];
-}
 
 -(void)frameActivateButtonWithSize:(CGSize)theSize {
 	CGSize thisViewSize	=	[[self view] size];
@@ -125,24 +126,22 @@
 	
 	[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"fake_luxury.png"]]];
 	
-	[_cardView setBackgroundColor:[UIColor grayColor]];
+	[_cardImageView setBackgroundColor:[UIColor grayColor]];
 	
-	CALayer	*layer	=	_cardView.layer;
+	CALayer	*layer	=	_cardImageView.layer;
 	[layer setBorderColor: [[UIColor whiteColor] CGColor]];
 	[layer setBorderWidth:8.0f];
 	[layer setShadowColor: [[UIColor blackColor] CGColor]];
 	[layer setShadowOpacity:0.9f];
 	[layer setShadowOffset: CGSizeMake(1, 3)];
 	[layer setShadowRadius:4.0];
-	[_cardView setClipsToBounds:NO];
+	[_cardImageView setClipsToBounds:NO];
 	
 	_cardInCreation	=	[[Card alloc] initWithEntity:[NSEntityDescription entityForName:@"Card" inManagedObjectContext:_objectContext] insertIntoManagedObjectContext:_objectContext];
 	
 	NSLog(@"Inserted: %@",[[_objectContext insertedObjects] description]);
 
-	
-	[[_swypWorkspace contentManager] setContentDataSource:self];
-	
+		
 	
 	//prompt button
 	_activateSwypButton	=	[UIButton buttonWithType:UIButtonTypeCustom];
@@ -165,6 +164,15 @@
 	[self setupViewForStep:_currentStep];
 }
 
+-(void)viewDidUnload{
+	if (self == [[_swypWorkspace contentManager] contentDataSource])
+		[[_swypWorkspace contentManager] setContentDataSource:nil];
+}
+
+-(void) viewWillDisappear:(BOOL)animated{
+	[super viewWillDisappear:animated];
+	
+}
 
 -(void) viewDidAppear:(BOOL)animated{
 	[super viewDidAppear:animated];
@@ -184,11 +192,10 @@
 			[self transitionToStep:_currentStep];
 		}
 	}
+	
+	[[_swypWorkspace contentManager] setContentDataSource:self];
 }
 
--(void) viewWillDisappear:(BOOL)animated{
-	[super viewWillDisappear:animated];
-}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -224,11 +231,10 @@
 }
 
 -(void)dealloc{
-	[[_swypWorkspace contentManager] setContentDataSource:nil];
 	
 	if (_currentStep < cardCreatorCreationStepAddSignature){
 		[_objectContext deleteObject:_cardInCreation];
-		[_delegate cardCreator:self didFinishWithCard:nil];
+//		[_delegate cardCreator:self didFinishWithCard:nil];
 	}
 	
 	_delegate		=	nil;
@@ -238,7 +244,7 @@
 	_cardInCreation	=	nil;
 	
 	_cardLabel					= nil;
-	_cardView					= nil;
+	_cardImageView					= nil;
 	[_signatureField setDelegate:nil];
 	_signatureField				= nil;
 	
@@ -301,10 +307,10 @@
 		return;
 	switch (_currentStep) {
 		case cardCreatorCreationStepAddCover:
-			[_cardInCreation setCoverImage:streamData];
+			[_cardInCreation setCoverImage:UIImageJPEGRepresentation(imageReceived, .9)];
 			break;
 		case cardCreatorCreationStepAddInside:
-			[_cardInCreation setInsideImage:streamData];
+			[_cardInCreation setInsideImage:UIImageJPEGRepresentation(imageReceived, .9)];
 			break;
 			
 		default:

@@ -34,7 +34,7 @@
 	    MasterViewController *masterViewController = [[MasterViewController alloc] initWithNibName:@"MasterViewController_iPad" bundle:nil];
 	    UINavigationController *masterNavigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
 	    
-	    DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController_iPad" bundle:nil];
+	    DetailViewController *detailViewController = [[DetailViewController alloc] initWithSwypWorkspace:[masterViewController swypWorkspace] managedObjectContext:[self managedObjectContext]];
 	    UINavigationController *detailNavigationController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
 		
 	    self.splitViewController = [[UISplitViewController alloc] init];

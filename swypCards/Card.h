@@ -17,4 +17,6 @@
 @property (nonatomic, retain) NSDate * timeStamp;
 @property (nonatomic, retain) NSNumber * wasReceived;
 
+-(NSData*)serializedDataValue;
+-(void) setValuesFromSerializedData:(NSData*)serializedData;
 @end
