@@ -26,7 +26,30 @@
 		7902D74F14D5018600C71731 /* exoNSDateAddtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7902D74E14D5018600C71731 /* exoNSDateAddtions.m */; };
 		7902D75C14D5023500C71731 /* swypPhotosHud.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D75A14D5023500C71731 /* swypPhotosHud.png */; };
 		7902D75D14D5023500C71731 /* swypPhotosHud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D75B14D5023500C71731 /* swypPhotosHud@2x.png */; };
+		7902D76914D5035A00C71731 /* liblibSwyp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7902D76614D5030C00C71731 /* liblibSwyp.a */; };
+		7902D77014D503B500C71731 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7902D76A14D5039300C71731 /* CFNetwork.framework */; };
+		7902D77114D503B500C71731 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7902D76B14D5039300C71731 /* GameKit.framework */; };
+		7902D77214D503B500C71731 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7902D76C14D5039400C71731 /* SystemConfiguration.framework */; };
+		7902D77414D5080600C71731 /* cardCreatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7902D77314D5080600C71731 /* cardCreatorViewController.xib */; };
+		7902D77614D50B9000C71731 /* fake_luxury.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D77514D50B9000C71731 /* fake_luxury.png */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7902D76514D5030C00C71731 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7902D75E14D5030B00C71731 /* libSwyp.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = libSwyp;
+		};
+		7902D76714D5034700C71731 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7902D75E14D5030B00C71731 /* libSwyp.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = libSwyp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7902D6C614D4B82000C71731 /* swypCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swypCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +80,12 @@
 		7902D74E14D5018600C71731 /* exoNSDateAddtions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = exoNSDateAddtions.m; sourceTree = "<group>"; };
 		7902D75A14D5023500C71731 /* swypPhotosHud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swypPhotosHud.png; sourceTree = "<group>"; };
 		7902D75B14D5023500C71731 /* swypPhotosHud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "swypPhotosHud@2x.png"; sourceTree = "<group>"; };
+		7902D75E14D5030B00C71731 /* libSwyp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libSwyp.xcodeproj; path = swyp/libSwyp/libSwyp.xcodeproj; sourceTree = SOURCE_ROOT; };
+		7902D76A14D5039300C71731 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		7902D76B14D5039300C71731 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		7902D76C14D5039400C71731 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7902D77314D5080600C71731 /* cardCreatorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cardCreatorViewController.xib; sourceTree = "<group>"; };
+		7902D77514D50B9000C71731 /* fake_luxury.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fake_luxury.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +93,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7902D77014D503B500C71731 /* CFNetwork.framework in Frameworks */,
+				7902D77114D503B500C71731 /* GameKit.framework in Frameworks */,
+				7902D77214D503B500C71731 /* SystemConfiguration.framework in Frameworks */,
 				7902D6CB14D4B82000C71731 /* UIKit.framework in Frameworks */,
 				7902D6CD14D4B82000C71731 /* Foundation.framework in Frameworks */,
 				7902D6CF14D4B82000C71731 /* CoreGraphics.framework in Frameworks */,
 				7902D6D114D4B82000C71731 /* CoreData.framework in Frameworks */,
+				7902D76914D5035A00C71731 /* liblibSwyp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +127,9 @@
 		7902D6C914D4B82000C71731 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7902D76A14D5039300C71731 /* CFNetwork.framework */,
+				7902D76B14D5039300C71731 /* GameKit.framework */,
+				7902D76C14D5039400C71731 /* SystemConfiguration.framework */,
 				7902D6CA14D4B82000C71731 /* UIKit.framework */,
 				7902D6CC14D4B82000C71731 /* Foundation.framework */,
 				7902D6CE14D4B82000C71731 /* CoreGraphics.framework */,
@@ -136,6 +172,7 @@
 		7902D6F914D4FDE100C71731 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				7902D75E14D5030B00C71731 /* libSwyp.xcodeproj */,
 				7902D74D14D5018600C71731 /* exoNSDateAddtions.h */,
 				7902D74E14D5018600C71731 /* exoNSDateAddtions.m */,
 				7902D70614D5005400C71731 /* Data */,
@@ -165,6 +202,7 @@
 			children = (
 				7902D70314D4FF9800C71731 /* cardCreatorViewController.h */,
 				7902D70414D4FF9800C71731 /* cardCreatorViewController.m */,
+				7902D77314D5080600C71731 /* cardCreatorViewController.xib */,
 			);
 			name = "card creator";
 			sourceTree = "<group>";
@@ -182,10 +220,19 @@
 		7902D75014D5020100C71731 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7902D77514D50B9000C71731 /* fake_luxury.png */,
 				7902D75A14D5023500C71731 /* swypPhotosHud.png */,
 				7902D75B14D5023500C71731 /* swypPhotosHud@2x.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		7902D75F14D5030B00C71731 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7902D76614D5030C00C71731 /* liblibSwyp.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +249,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7902D76814D5034700C71731 /* PBXTargetDependency */,
 			);
 			name = swypCards;
 			productName = swypCards;
@@ -227,12 +275,28 @@
 			mainGroup = 7902D6BB14D4B82000C71731;
 			productRefGroup = 7902D6C714D4B82000C71731 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 7902D75F14D5030B00C71731 /* Products */;
+					ProjectRef = 7902D75E14D5030B00C71731 /* libSwyp.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				7902D6C514D4B82000C71731 /* swypCards */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		7902D76614D5030C00C71731 /* liblibSwyp.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = liblibSwyp.a;
+			remoteRef = 7902D76514D5030C00C71731 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		7902D6C414D4B82000C71731 /* Resources */ = {
@@ -246,6 +310,8 @@
 				7902D6F214D4B82000C71731 /* DetailViewController_iPad.xib in Resources */,
 				7902D75C14D5023500C71731 /* swypPhotosHud.png in Resources */,
 				7902D75D14D5023500C71731 /* swypPhotosHud@2x.png in Resources */,
+				7902D77414D5080600C71731 /* cardCreatorViewController.xib in Resources */,
+				7902D77614D50B9000C71731 /* fake_luxury.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +334,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7902D76814D5034700C71731 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libSwyp;
+			targetProxy = 7902D76714D5034700C71731 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7902D6D514D4B82000C71731 /* InfoPlist.strings */ = {
@@ -365,7 +439,9 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "swypCards/swypCards-Prefix.pch";
+				HEADER_SEARCH_PATHS = "./swyp/**";
 				INFOPLIST_FILE = "swypCards/swypCards-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -376,7 +452,9 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "swypCards/swypCards-Prefix.pch";
+				HEADER_SEARCH_PATHS = "./swyp/**";
 				INFOPLIST_FILE = "swypCards/swypCards-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

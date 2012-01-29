@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import "Card.h"
 #import "exoNSDateAddtions.h"
+#import "swypPhotoPlayground.h"
 
 @interface MasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -49,7 +50,7 @@
 	// Set up the edit and add buttons.
 	self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject)];
+	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newCardButtonPressed)];
 	self.navigationItem.rightBarButtonItem = addButton;
 }
 
@@ -278,31 +279,61 @@
 {
     Card *managedCard = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text			= [managedCard signature];
+	cell.textLabel.font			= [UIFont fontWithName:@"BradleyHandITCTT-Bold" size:25];
 	cell.detailTextLabel.text	= [[managedCard timeStamp] formatAsShortString];
 }
 
-- (void)insertNewObject
-{
-    // Create a new instance of the entity managed by the fetched results controller.
-    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-    
-    // If appropriate, configure the new managed object.
-    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-    
-    // Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-         
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-         */
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
+#pragma mark - cardCreator
+
+-(void)newCardButtonPressed{
+	NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+		
+	cardCreatorViewController * creatorController	=	[[cardCreatorViewController alloc] initWithSwypWorkspace:[self swypWorkspace] objectContext:context cardCreatorDelegate:self];
+	
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+		[[self navigationController] pushViewController:creatorController animated:TRUE];	
+	}else{
+		[[[self detailViewController] navigationController] pushViewController:creatorController animated:TRUE];
+	}
+}
+#pragma mark cardCreatorViewControllerDelegate
+
+-(void)	cardCreator:(cardCreatorViewController*)creator didFinishWithCard:(Card*)card{
+	if (card){
+		
+		
+		NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+		NSError *error = nil;
+		if (![context save:&error]) {
+			/*
+			 Replace this implementation with code to handle the error appropriately.
+			 
+			 abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
+			 */
+			NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+			abort();
+		}
+	}
+}
+
+#pragma mark - swypWorkspaceViewController
+-(swypWorkspaceViewController*)swypWorkspace{
+	if (_swypWorkspace == nil){
+		_swypWorkspace	=	[[swypWorkspaceViewController alloc] initWithWorkspaceDelegate:self];
+		[_swypWorkspace.view setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
+		[_swypWorkspace.view setFrame:self.view.bounds];
+		
+		
+		swypPhotoPlayground *	contentDisplayController	=	[[swypPhotoPlayground alloc] initWithPhotoSize:CGSizeMake(250, 200)];
+		
+		[[[self swypWorkspace] contentManager] setContentDisplayController:contentDisplayController];
+
+	}
+	return _swypWorkspace;
+}
+
+-(void)	delegateShouldDismissSwypWorkspace: (swypWorkspaceViewController*)workspace{
+	[workspace dismissModalViewControllerAnimated:TRUE];
 }
 
 @end

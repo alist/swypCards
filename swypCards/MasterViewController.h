@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "cardCreatorViewController.h"
 
 @class DetailViewController;
 
 #import <CoreData/CoreData.h>
 
-@interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate, cardCreatorViewControllerDelegate, swypWorkspaceDelegate>{
+	swypWorkspaceViewController *	_swypWorkspace;
+}
+@property (nonatomic, readonly) swypWorkspaceViewController * swypWorkspace;
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 

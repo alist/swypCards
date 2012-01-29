@@ -16,4 +16,9 @@
 @dynamic timeStamp;
 @dynamic wasReceived;
 
+-(void) awakeFromInsert{
+	[super awakeFromInsert];
+	self.timeStamp	=	[NSDate date];
+}
+
 @end
