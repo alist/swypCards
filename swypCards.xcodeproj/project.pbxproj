@@ -21,6 +21,8 @@
 		7902D6EC14D4B82000C71731 /* MasterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7902D6EA14D4B82000C71731 /* MasterViewController_iPad.xib */; };
 		7902D6EF14D4B82000C71731 /* DetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7902D6ED14D4B82000C71731 /* DetailViewController_iPhone.xib */; };
 		7902D6F214D4B82000C71731 /* DetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7902D6F014D4B82000C71731 /* DetailViewController_iPad.xib */; };
+		7902D6FC14D4FE0F00C71731 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 7902D6FB14D4FE0F00C71731 /* Card.m */; };
+		7902D70514D4FF9800C71731 /* cardCreatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7902D70414D4FF9800C71731 /* cardCreatorViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,21 +31,25 @@
 		7902D6CC14D4B82000C71731 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7902D6CE14D4B82000C71731 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		7902D6D014D4B82000C71731 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		7902D6D414D4B82000C71731 /* swypCards-Info.plist */ = {isa = PBXFileReference; path = "swypCards-Info.plist"; sourceTree = "<group>"; };
+		7902D6D414D4B82000C71731 /* swypCards-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "swypCards-Info.plist"; sourceTree = "<group>"; };
 		7902D6D614D4B82000C71731 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7902D6D814D4B82000C71731 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7902D6DA14D4B82000C71731 /* swypCards-Prefix.pch */ = {isa = PBXFileReference; path = "swypCards-Prefix.pch"; sourceTree = "<group>"; };
-		7902D6DB14D4B82000C71731 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		7902D6DA14D4B82000C71731 /* swypCards-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "swypCards-Prefix.pch"; sourceTree = "<group>"; };
+		7902D6DB14D4B82000C71731 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7902D6DC14D4B82000C71731 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7902D6DF14D4B82000C71731 /* swypCards.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = swypCards.xcdatamodel; sourceTree = "<group>"; };
-		7902D6E114D4B82000C71731 /* MasterViewController.h */ = {isa = PBXFileReference; path = MasterViewController.h; sourceTree = "<group>"; };
+		7902D6E114D4B82000C71731 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		7902D6E214D4B82000C71731 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		7902D6E414D4B82000C71731 /* DetailViewController.h */ = {isa = PBXFileReference; path = DetailViewController.h; sourceTree = "<group>"; };
+		7902D6E414D4B82000C71731 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		7902D6E514D4B82000C71731 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		7902D6E814D4B82000C71731 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController_iPhone.xib; sourceTree = "<group>"; };
 		7902D6EB14D4B82000C71731 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController_iPad.xib; sourceTree = "<group>"; };
 		7902D6EE14D4B82000C71731 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPhone.xib; sourceTree = "<group>"; };
 		7902D6F114D4B82000C71731 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPad.xib; sourceTree = "<group>"; };
+		7902D6FA14D4FE0F00C71731 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		7902D6FB14D4FE0F00C71731 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		7902D70314D4FF9800C71731 /* cardCreatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cardCreatorViewController.h; sourceTree = "<group>"; };
+		7902D70414D4FF9800C71731 /* cardCreatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cardCreatorViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,17 +98,8 @@
 		7902D6D214D4B82000C71731 /* swypCards */ = {
 			isa = PBXGroup;
 			children = (
-				7902D6DB14D4B82000C71731 /* AppDelegate.h */,
-				7902D6DC14D4B82000C71731 /* AppDelegate.m */,
-				7902D6E114D4B82000C71731 /* MasterViewController.h */,
-				7902D6E214D4B82000C71731 /* MasterViewController.m */,
-				7902D6E414D4B82000C71731 /* DetailViewController.h */,
-				7902D6E514D4B82000C71731 /* DetailViewController.m */,
-				7902D6E714D4B82000C71731 /* MasterViewController_iPhone.xib */,
-				7902D6EA14D4B82000C71731 /* MasterViewController_iPad.xib */,
-				7902D6ED14D4B82000C71731 /* DetailViewController_iPhone.xib */,
-				7902D6F014D4B82000C71731 /* DetailViewController_iPad.xib */,
-				7902D6DE14D4B82000C71731 /* swypCards.xcdatamodeld */,
+				7902D6F914D4FDE100C71731 /* Logic */,
+				7902D6F814D4FDC900C71731 /* View Controllers */,
 				7902D6D314D4B82000C71731 /* Supporting Files */,
 			);
 			path = swypCards;
@@ -117,6 +114,59 @@
 				7902D6DA14D4B82000C71731 /* swypCards-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7902D6F814D4FDC900C71731 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7902D70214D4FF5D00C71731 /* card creator */,
+				7902D70114D4FF5B00C71731 /* card display */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		7902D6F914D4FDE100C71731 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				7902D70614D5005400C71731 /* Data */,
+				7902D6DB14D4B82000C71731 /* AppDelegate.h */,
+				7902D6DC14D4B82000C71731 /* AppDelegate.m */,
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
+		7902D70114D4FF5B00C71731 /* card display */ = {
+			isa = PBXGroup;
+			children = (
+				7902D6E114D4B82000C71731 /* MasterViewController.h */,
+				7902D6E214D4B82000C71731 /* MasterViewController.m */,
+				7902D6E414D4B82000C71731 /* DetailViewController.h */,
+				7902D6E514D4B82000C71731 /* DetailViewController.m */,
+				7902D6E714D4B82000C71731 /* MasterViewController_iPhone.xib */,
+				7902D6EA14D4B82000C71731 /* MasterViewController_iPad.xib */,
+				7902D6ED14D4B82000C71731 /* DetailViewController_iPhone.xib */,
+				7902D6F014D4B82000C71731 /* DetailViewController_iPad.xib */,
+			);
+			name = "card display";
+			sourceTree = "<group>";
+		};
+		7902D70214D4FF5D00C71731 /* card creator */ = {
+			isa = PBXGroup;
+			children = (
+				7902D70314D4FF9800C71731 /* cardCreatorViewController.h */,
+				7902D70414D4FF9800C71731 /* cardCreatorViewController.m */,
+			);
+			name = "card creator";
+			sourceTree = "<group>";
+		};
+		7902D70614D5005400C71731 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7902D6DE14D4B82000C71731 /* swypCards.xcdatamodeld */,
+				7902D6FA14D4FE0F00C71731 /* Card.h */,
+				7902D6FB14D4FE0F00C71731 /* Card.m */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +240,8 @@
 				7902D6E014D4B82000C71731 /* swypCards.xcdatamodeld in Sources */,
 				7902D6E314D4B82000C71731 /* MasterViewController.m in Sources */,
 				7902D6E614D4B82000C71731 /* DetailViewController.m in Sources */,
+				7902D6FC14D4FE0F00C71731 /* Card.m in Sources */,
+				7902D70514D4FF9800C71731 /* cardCreatorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
