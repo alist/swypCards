@@ -19,8 +19,6 @@
 		7902D6E614D4B82000C71731 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7902D6E514D4B82000C71731 /* DetailViewController.m */; };
 		7902D6E914D4B82000C71731 /* MasterViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7902D6E714D4B82000C71731 /* MasterViewController_iPhone.xib */; };
 		7902D6EC14D4B82000C71731 /* MasterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7902D6EA14D4B82000C71731 /* MasterViewController_iPad.xib */; };
-		7902D6EF14D4B82000C71731 /* DetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7902D6ED14D4B82000C71731 /* DetailViewController_iPhone.xib */; };
-		7902D6F214D4B82000C71731 /* DetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7902D6F014D4B82000C71731 /* DetailViewController_iPad.xib */; };
 		7902D6FC14D4FE0F00C71731 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 7902D6FB14D4FE0F00C71731 /* Card.m */; };
 		7902D70514D4FF9800C71731 /* cardCreatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7902D70414D4FF9800C71731 /* cardCreatorViewController.m */; };
 		7902D74F14D5018600C71731 /* exoNSDateAddtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7902D74E14D5018600C71731 /* exoNSDateAddtions.m */; };
@@ -32,6 +30,25 @@
 		7902D77214D503B500C71731 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7902D76C14D5039400C71731 /* SystemConfiguration.framework */; };
 		7902D77414D5080600C71731 /* cardCreatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7902D77314D5080600C71731 /* cardCreatorViewController.xib */; };
 		7902D77614D50B9000C71731 /* fake_luxury.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D77514D50B9000C71731 /* fake_luxury.png */; };
+		7902D79D14D537E900C71731 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7902D79C14D537E800C71731 /* DetailViewController.xib */; };
+		7902D7B114D53A0C00C71731 /* bluetooth-logo-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D79F14D53A0C00C71731 /* bluetooth-logo-enabled.png */; };
+		7902D7B214D53A0C00C71731 /* bluetooth-logo-enabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7A014D53A0C00C71731 /* bluetooth-logo-enabled@2x.png */; };
+		7902D7B314D53A0C00C71731 /* cloud-logo-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7A114D53A0C00C71731 /* cloud-logo-enabled.png */; };
+		7902D7B414D53A0C00C71731 /* cloud-logo-enabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7A214D53A0C00C71731 /* cloud-logo-enabled@2x.png */; };
+		7902D7B514D53A0C00C71731 /* connectivity-bluetooth-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7A314D53A0C00C71731 /* connectivity-bluetooth-disabled.png */; };
+		7902D7B614D53A0C00C71731 /* connectivity-bluetooth-disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7A414D53A0C00C71731 /* connectivity-bluetooth-disabled@2x.png */; };
+		7902D7B714D53A0C00C71731 /* connectivity-bluetooth-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7A514D53A0C00C71731 /* connectivity-bluetooth-enabled.png */; };
+		7902D7B814D53A0C00C71731 /* connectivity-bluetooth-enabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7A614D53A0C00C71731 /* connectivity-bluetooth-enabled@2x.png */; };
+		7902D7B914D53A0C00C71731 /* connectivity-world-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7A714D53A0C00C71731 /* connectivity-world-disabled.png */; };
+		7902D7BA14D53A0C00C71731 /* connectivity-world-disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7A814D53A0C00C71731 /* connectivity-world-disabled@2x.png */; };
+		7902D7BB14D53A0C00C71731 /* connectivity-world-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7A914D53A0C00C71731 /* connectivity-world-enabled.png */; };
+		7902D7BC14D53A0C00C71731 /* connectivity-world-enabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7AA14D53A0C00C71731 /* connectivity-world-enabled@2x.png */; };
+		7902D7BD14D53A0C00C71731 /* down_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7AB14D53A0C00C71731 /* down_arrow.png */; };
+		7902D7BE14D53A0C00C71731 /* down_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7AC14D53A0C00C71731 /* down_arrow@2x.png */; };
+		7902D7BF14D53A0C00C71731 /* swypPromptHud.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7AD14D53A0C00C71731 /* swypPromptHud.png */; };
+		7902D7C014D53A0C00C71731 /* swypPromptHud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7AE14D53A0C00C71731 /* swypPromptHud@2x.png */; };
+		7902D7C114D53A0C00C71731 /* top_curl.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7AF14D53A0C00C71731 /* top_curl.png */; };
+		7902D7C214D53A0C00C71731 /* top_curl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7B014D53A0C00C71731 /* top_curl@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,8 +87,6 @@
 		7902D6E514D4B82000C71731 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		7902D6E814D4B82000C71731 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController_iPhone.xib; sourceTree = "<group>"; };
 		7902D6EB14D4B82000C71731 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController_iPad.xib; sourceTree = "<group>"; };
-		7902D6EE14D4B82000C71731 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPhone.xib; sourceTree = "<group>"; };
-		7902D6F114D4B82000C71731 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPad.xib; sourceTree = "<group>"; };
 		7902D6FA14D4FE0F00C71731 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		7902D6FB14D4FE0F00C71731 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 		7902D70314D4FF9800C71731 /* cardCreatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cardCreatorViewController.h; sourceTree = "<group>"; };
@@ -86,6 +101,25 @@
 		7902D76C14D5039400C71731 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7902D77314D5080600C71731 /* cardCreatorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cardCreatorViewController.xib; sourceTree = "<group>"; };
 		7902D77514D50B9000C71731 /* fake_luxury.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fake_luxury.png; sourceTree = "<group>"; };
+		7902D79C14D537E800C71731 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		7902D79F14D53A0C00C71731 /* bluetooth-logo-enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bluetooth-logo-enabled.png"; sourceTree = "<group>"; };
+		7902D7A014D53A0C00C71731 /* bluetooth-logo-enabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bluetooth-logo-enabled@2x.png"; sourceTree = "<group>"; };
+		7902D7A114D53A0C00C71731 /* cloud-logo-enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-logo-enabled.png"; sourceTree = "<group>"; };
+		7902D7A214D53A0C00C71731 /* cloud-logo-enabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-logo-enabled@2x.png"; sourceTree = "<group>"; };
+		7902D7A314D53A0C00C71731 /* connectivity-bluetooth-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectivity-bluetooth-disabled.png"; sourceTree = "<group>"; };
+		7902D7A414D53A0C00C71731 /* connectivity-bluetooth-disabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectivity-bluetooth-disabled@2x.png"; sourceTree = "<group>"; };
+		7902D7A514D53A0C00C71731 /* connectivity-bluetooth-enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectivity-bluetooth-enabled.png"; sourceTree = "<group>"; };
+		7902D7A614D53A0C00C71731 /* connectivity-bluetooth-enabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectivity-bluetooth-enabled@2x.png"; sourceTree = "<group>"; };
+		7902D7A714D53A0C00C71731 /* connectivity-world-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectivity-world-disabled.png"; sourceTree = "<group>"; };
+		7902D7A814D53A0C00C71731 /* connectivity-world-disabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectivity-world-disabled@2x.png"; sourceTree = "<group>"; };
+		7902D7A914D53A0C00C71731 /* connectivity-world-enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectivity-world-enabled.png"; sourceTree = "<group>"; };
+		7902D7AA14D53A0C00C71731 /* connectivity-world-enabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectivity-world-enabled@2x.png"; sourceTree = "<group>"; };
+		7902D7AB14D53A0C00C71731 /* down_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down_arrow.png; sourceTree = "<group>"; };
+		7902D7AC14D53A0C00C71731 /* down_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down_arrow@2x.png"; sourceTree = "<group>"; };
+		7902D7AD14D53A0C00C71731 /* swypPromptHud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swypPromptHud.png; sourceTree = "<group>"; };
+		7902D7AE14D53A0C00C71731 /* swypPromptHud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "swypPromptHud@2x.png"; sourceTree = "<group>"; };
+		7902D7AF14D53A0C00C71731 /* top_curl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_curl.png; sourceTree = "<group>"; };
+		7902D7B014D53A0C00C71731 /* top_curl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_curl@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,8 +225,7 @@
 				7902D6E514D4B82000C71731 /* DetailViewController.m */,
 				7902D6E714D4B82000C71731 /* MasterViewController_iPhone.xib */,
 				7902D6EA14D4B82000C71731 /* MasterViewController_iPad.xib */,
-				7902D6ED14D4B82000C71731 /* DetailViewController_iPhone.xib */,
-				7902D6F014D4B82000C71731 /* DetailViewController_iPad.xib */,
+				7902D79C14D537E800C71731 /* DetailViewController.xib */,
 			);
 			name = "card display";
 			sourceTree = "<group>";
@@ -220,6 +253,7 @@
 		7902D75014D5020100C71731 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7902D79E14D53A0C00C71731 /* swypBundleResources */,
 				7902D77514D50B9000C71731 /* fake_luxury.png */,
 				7902D75A14D5023500C71731 /* swypPhotosHud.png */,
 				7902D75B14D5023500C71731 /* swypPhotosHud@2x.png */,
@@ -234,6 +268,32 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		7902D79E14D53A0C00C71731 /* swypBundleResources */ = {
+			isa = PBXGroup;
+			children = (
+				7902D79F14D53A0C00C71731 /* bluetooth-logo-enabled.png */,
+				7902D7A014D53A0C00C71731 /* bluetooth-logo-enabled@2x.png */,
+				7902D7A114D53A0C00C71731 /* cloud-logo-enabled.png */,
+				7902D7A214D53A0C00C71731 /* cloud-logo-enabled@2x.png */,
+				7902D7A314D53A0C00C71731 /* connectivity-bluetooth-disabled.png */,
+				7902D7A414D53A0C00C71731 /* connectivity-bluetooth-disabled@2x.png */,
+				7902D7A514D53A0C00C71731 /* connectivity-bluetooth-enabled.png */,
+				7902D7A614D53A0C00C71731 /* connectivity-bluetooth-enabled@2x.png */,
+				7902D7A714D53A0C00C71731 /* connectivity-world-disabled.png */,
+				7902D7A814D53A0C00C71731 /* connectivity-world-disabled@2x.png */,
+				7902D7A914D53A0C00C71731 /* connectivity-world-enabled.png */,
+				7902D7AA14D53A0C00C71731 /* connectivity-world-enabled@2x.png */,
+				7902D7AB14D53A0C00C71731 /* down_arrow.png */,
+				7902D7AC14D53A0C00C71731 /* down_arrow@2x.png */,
+				7902D7AD14D53A0C00C71731 /* swypPromptHud.png */,
+				7902D7AE14D53A0C00C71731 /* swypPromptHud@2x.png */,
+				7902D7AF14D53A0C00C71731 /* top_curl.png */,
+				7902D7B014D53A0C00C71731 /* top_curl@2x.png */,
+			);
+			name = swypBundleResources;
+			path = swyp/swypBundleResources;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -306,12 +366,29 @@
 				7902D6D714D4B82000C71731 /* InfoPlist.strings in Resources */,
 				7902D6E914D4B82000C71731 /* MasterViewController_iPhone.xib in Resources */,
 				7902D6EC14D4B82000C71731 /* MasterViewController_iPad.xib in Resources */,
-				7902D6EF14D4B82000C71731 /* DetailViewController_iPhone.xib in Resources */,
-				7902D6F214D4B82000C71731 /* DetailViewController_iPad.xib in Resources */,
 				7902D75C14D5023500C71731 /* swypPhotosHud.png in Resources */,
 				7902D75D14D5023500C71731 /* swypPhotosHud@2x.png in Resources */,
 				7902D77414D5080600C71731 /* cardCreatorViewController.xib in Resources */,
 				7902D77614D50B9000C71731 /* fake_luxury.png in Resources */,
+				7902D79D14D537E900C71731 /* DetailViewController.xib in Resources */,
+				7902D7B114D53A0C00C71731 /* bluetooth-logo-enabled.png in Resources */,
+				7902D7B214D53A0C00C71731 /* bluetooth-logo-enabled@2x.png in Resources */,
+				7902D7B314D53A0C00C71731 /* cloud-logo-enabled.png in Resources */,
+				7902D7B414D53A0C00C71731 /* cloud-logo-enabled@2x.png in Resources */,
+				7902D7B514D53A0C00C71731 /* connectivity-bluetooth-disabled.png in Resources */,
+				7902D7B614D53A0C00C71731 /* connectivity-bluetooth-disabled@2x.png in Resources */,
+				7902D7B714D53A0C00C71731 /* connectivity-bluetooth-enabled.png in Resources */,
+				7902D7B814D53A0C00C71731 /* connectivity-bluetooth-enabled@2x.png in Resources */,
+				7902D7B914D53A0C00C71731 /* connectivity-world-disabled.png in Resources */,
+				7902D7BA14D53A0C00C71731 /* connectivity-world-disabled@2x.png in Resources */,
+				7902D7BB14D53A0C00C71731 /* connectivity-world-enabled.png in Resources */,
+				7902D7BC14D53A0C00C71731 /* connectivity-world-enabled@2x.png in Resources */,
+				7902D7BD14D53A0C00C71731 /* down_arrow.png in Resources */,
+				7902D7BE14D53A0C00C71731 /* down_arrow@2x.png in Resources */,
+				7902D7BF14D53A0C00C71731 /* swypPromptHud.png in Resources */,
+				7902D7C014D53A0C00C71731 /* swypPromptHud@2x.png in Resources */,
+				7902D7C114D53A0C00C71731 /* top_curl.png in Resources */,
+				7902D7C214D53A0C00C71731 /* top_curl@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,22 +445,6 @@
 			name = MasterViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
-		7902D6ED14D4B82000C71731 /* DetailViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7902D6EE14D4B82000C71731 /* en */,
-			);
-			name = DetailViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		7902D6F014D4B82000C71731 /* DetailViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7902D6F114D4B82000C71731 /* en */,
-			);
-			name = DetailViewController_iPad.xib;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -437,12 +498,14 @@
 		7902D6F614D4B82000C71731 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alexander List (76TLAY9W6F)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "swypCards/swypCards-Prefix.pch";
 				HEADER_SEARCH_PATHS = "./swyp/**";
 				INFOPLIST_FILE = "swypCards/swypCards-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "557B0F8E-F52E-41AF-972A-7A155C7B6CE4";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;

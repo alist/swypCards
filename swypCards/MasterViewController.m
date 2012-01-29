@@ -138,7 +138,7 @@
         
         // Save the context.
         NSError *error = nil;
-        if (![context save:&error]) {
+        if ([context hasChanges] && ![context save:&error]) {
             /*
              Replace this implementation with code to handle the error appropriately.
              
@@ -162,12 +162,12 @@
 	    if (!self.detailViewController) {
 	        self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController_iPhone" bundle:nil];
 	    }
-        NSManagedObject *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        self.detailViewController.detailItem = selectedObject;    
+        Card *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        self.detailViewController.cardDetailItem = selectedObject;    
         [self.navigationController pushViewController:self.detailViewController animated:YES];
     } else {
-        NSManagedObject *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        self.detailViewController.detailItem = selectedObject;    
+        Card *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        self.detailViewController.cardDetailItem = selectedObject;    
     }
 }
 
@@ -279,16 +279,15 @@
 {
     Card *managedCard = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text			= [managedCard signature];
-	cell.textLabel.font			= [UIFont fontWithName:@"BradleyHandITCTT-Bold" size:25];
+	cell.textLabel.font			= [UIFont fontWithName:@"BradleyHandITCTT-Bold" size:20];
 	cell.detailTextLabel.text	= [[managedCard timeStamp] formatAsShortString];
 }
 
 #pragma mark - cardCreator
 
 -(void)newCardButtonPressed{
-	NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
 		
-	cardCreatorViewController * creatorController	=	[[cardCreatorViewController alloc] initWithSwypWorkspace:[self swypWorkspace] objectContext:context cardCreatorDelegate:self];
+	cardCreatorViewController * creatorController	=	[[cardCreatorViewController alloc] initWithSwypWorkspace:[self swypWorkspace] objectContext:self.managedObjectContext cardCreatorDelegate:self];
 	
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
 		[[self navigationController] pushViewController:creatorController animated:TRUE];	
@@ -301,10 +300,10 @@
 -(void)	cardCreator:(cardCreatorViewController*)creator didFinishWithCard:(Card*)card{
 	if (card){
 		
-		
-		NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+
+		NSManagedObjectContext *context = [self managedObjectContext];
 		NSError *error = nil;
-		if (![context save:&error]) {
+		if ([context hasChanges] && ![context save:&error]) {
 			/*
 			 Replace this implementation with code to handle the error appropriately.
 			 
@@ -313,6 +312,12 @@
 			NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 			abort();
 		}
+	}
+	
+	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+		[[self navigationController] popToRootViewControllerAnimated:TRUE];
+	}else{
+		[[[self detailViewController] navigationController]  popToRootViewControllerAnimated:TRUE];
 	}
 }
 

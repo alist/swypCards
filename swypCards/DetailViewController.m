@@ -7,6 +7,8 @@
 //
 
 #import "DetailViewController.h"
+#import <QuartzCore/QuartzCore.h>
+
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -15,16 +17,19 @@
 
 @implementation DetailViewController
 
-@synthesize detailItem = _detailItem;
+@synthesize cardDetailItem = _cardDetailItem;
 @synthesize detailDescriptionLabel = _detailDescriptionLabel;
 @synthesize masterPopoverController = _masterPopoverController;
 
+
+#pragma mark - User Interface Cruft
+
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
+- (void)setDetailItem:(Card*)newDetailItem
 {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
+    if (_cardDetailItem != newDetailItem) {
+        _cardDetailItem = newDetailItem;
         
         // Update the view.
         [self configureView];
@@ -35,31 +40,47 @@
     }        
 }
 
+
+#pragma mark view configuration
 - (void)configureView
 {
     // Update the user interface for the detail item.
 
-	if (self.detailItem) {
-	    self.detailDescriptionLabel.text = [self.detailItem description];
+	if (self.cardDetailItem) {
+	    self.detailDescriptionLabel.text	=	[self.cardDetailItem description];
+		self.title							=	[_cardDetailItem signature];
 	}
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
-}
-
-#pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"fake_luxury.png"]]];
 	
-	// Do any additional setup after loading the view, typically from a nib.
+	[_cardImageView setBackgroundColor:[UIColor grayColor]];
+	
+	CALayer	*layer	=	_cardImageView.layer;
+	[layer setBorderColor: [[UIColor whiteColor] CGColor]];
+	[layer setBorderWidth:8.0f];
+	[layer setShadowColor: [[UIColor blackColor] CGColor]];
+	[layer setShadowOpacity:0.9f];
+	[layer setShadowOffset: CGSizeMake(1, 3)];
+	[layer setShadowRadius:4.0];
+	[_cardImageView setClipsToBounds:NO];
+	
+	
 	[self configureView];
 }
+
+
+#pragma mark - View lifecycle
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Release any cached data, images, etc that aren't in use.
+}
+
+
 
 - (void)viewDidUnload
 {
@@ -100,7 +121,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:nil bundle:nil];
     if (self) {
 		self.title = NSLocalizedString(@"Your Card", @"Your Card");
     }

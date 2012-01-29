@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Card.h"
 
-@interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
+@interface DetailViewController : UIViewController <UISplitViewControllerDelegate>{
+	
+	IBOutlet UIImageView *		_cardImageView;
+}
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) Card* cardDetailItem;
 
 @property (strong, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 

@@ -18,13 +18,14 @@
 @end
 
 typedef enum{
-	cardCreatorCreationStepAddCover,	
+	cardCreatorCreationStepAddCover = 0,	
 	cardCreatorCreationStepAddInside,
-	cardCreatorCreationStepAddSignature
+	cardCreatorCreationStepAddSignature,
+	cardCreatorCreationStepFinished
 }cardCreatorCreationStep;
 
 
-@interface cardCreatorViewController : UIViewController <swypContentDataSourceProtocol, swypConnectionSessionDataDelegate>{
+@interface cardCreatorViewController : UIViewController <swypContentDataSourceProtocol, swypConnectionSessionDataDelegate, UITextFieldDelegate>{
 	cardCreatorCreationStep			_currentStep;
 	
 	Card *							_cardInCreation;
@@ -37,8 +38,9 @@ typedef enum{
 	//view components
 	IBOutlet UILabel *				_cardLabel;
 	IBOutlet UIImageView *			_cardView;
+	IBOutlet UITextField *			_signatureField;
 	
-	UIButton *						_swypWorkspacePromptButton;
+	UIButton *						_activateSwypButton;
 }
 
 -(id) initWithSwypWorkspace:(swypWorkspaceViewController*)workspace objectContext:(NSManagedObjectContext*)context cardCreatorDelegate:(id<cardCreatorViewControllerDelegate>)delegate;
@@ -46,4 +48,7 @@ typedef enum{
 -(void)	transitionToStep:(cardCreatorCreationStep)step;
 -(void) setupViewForStep:(cardCreatorCreationStep)step;
 
+-(void)frameActivateButtonWithSize:(CGSize)theSize ;
+-(void) setupCardImageViewForCurrentStateWithImage:(UIImage*)image;
+-(UIImage*)	constrainImage:(UIImage*)image toSize:(CGSize)maxSize;
 @end
