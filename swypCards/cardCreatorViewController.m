@@ -398,13 +398,32 @@
 			break;
 		case cardCreatorCreationStepAddInside:
 			[_cardInCreation setInsideImage:UIImageJPEGRepresentation(selectedImage, .9)];
+
 			break;
 			
 		default:
 			break;
 	}
 	[self setupViewForStep:_currentStep];
+	
+	//Popovers don't make view disappear
+	if (deviceIsPad){
 
+		[UIView animateWithDuration:.1 delay:.5 options:0  animations:nil completion:^(BOOL Completed){
+			if (_currentStep == cardCreatorCreationStepAddCover){
+				if (_cardInCreation.coverImage != nil){
+					_currentStep = cardCreatorCreationStepAddInside;
+					[self transitionToStep:_currentStep];
+				}
+			}else if (_currentStep == cardCreatorCreationStepAddInside){
+				if (_cardInCreation.coverImage != nil){
+					_currentStep = cardCreatorCreationStepAddSignature;
+					[self transitionToStep:_currentStep];
+				}
+			}	
+		}];
+	}
+	
 	
 }
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{

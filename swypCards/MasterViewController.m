@@ -460,6 +460,7 @@
 	
 	*contentLengthDestOrNULL	=	[streamData length];
 	return [NSInputStream inputStreamWithData:streamData]; */
+	return nil;
 }
 -(void)	setDatasourceDelegate:			(id<swypContentDataSourceDelegate>)delegate{
 //	_delegate	=	delegate;
