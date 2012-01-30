@@ -79,7 +79,8 @@
 		swipeUpRecognizer.direction = UISwipeGestureRecognizerDirectionUp;
 		[_iPhoneModeSwypPromptButton addGestureRecognizer:swipeUpRecognizer];
 		
-		[self.view.superview addSubview:_iPhoneModeSwypPromptButton];
+		[self.view addSubview:_iPhoneModeSwypPromptButton];
+//		[self.tableView setTableFooterView:_iPhoneModeSwypPromptButton];
 	}
 	
 }
