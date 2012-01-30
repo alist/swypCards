@@ -33,7 +33,7 @@
 	UIImage * cardImage	=	nil;
 	switch (step) {
 		case cardCreatorCreationStepAddCover:
-			_cardLabel.text	=	NSLocalizedString(@"swyp to add a cover", @"on card creator");
+			_cardLabel.text	=	NSLocalizedString(@"swÿp-in to add a cover", @"on card creator");
 			if (_cardInCreation.coverImage == nil){
 				[_cardImageView setBackgroundColor:[UIColor grayColor]];
 				[_cardImageView setImage:nil];
@@ -42,7 +42,7 @@
 			}
 			break;
 		case cardCreatorCreationStepAddInside:
-			_cardLabel.text	=	NSLocalizedString(@"swyp to add inside image", @"on card creator step two");
+			_cardLabel.text	=	NSLocalizedString(@"swÿp-in to add inside image", @"on card creator step two");
 			if (_cardInCreation.insideImage == nil){
 				[_cardImageView setBackgroundColor:[UIColor grayColor]];
 				[_cardImageView setImage:nil];

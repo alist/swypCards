@@ -30,7 +30,7 @@
 
 -(void)frameActivateButtonWithSize:(CGSize)theSize {
 	CGSize thisViewSize	=	[[self view] size];
-    [_activateSwypButton setFrame:CGRectMake(((thisViewSize.width)-theSize.width)/2, thisViewSize.height-theSize.height, theSize.width, theSize.height)];
+	[_activateSwypButton setFrame:CGRectMake((thisViewSize.width-theSize.width), (thisViewSize.height-theSize.height), theSize.width, theSize.height)];
 }
 
 
@@ -87,8 +87,9 @@
 
 -(void) setupCardImageViewForCurrentStateWithImage:(UIImage*)image{
 	
-	CGPoint cardCenter	=	[_cardImageView center];
-	CGSize maxSize		=	[_cardImageView size];
+	CGRect cardMaxRect	=	CGRectInset(self.view.frame, 35, 50);
+	CGPoint cardCenter	=	rectCenter(cardMaxRect);
+	CGSize maxSize		=	cardMaxRect.size;
 	
 	UIImage * properlySizedImage	=	[self constrainImage:image toSize:CGSizeMake(maxSize.width * _cardImageView.layer.contentsScale, maxSize.height * _cardImageView.layer.contentsScale)];
 	
@@ -141,6 +142,7 @@
     if (_cardDetailItem != newDetailItem) {
         _cardDetailItem = newDetailItem;
         
+		_currentCardState	=	cardViewStateCover;
         // Update the view.
         [self configureView];
     }
@@ -171,6 +173,8 @@
 	[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"fake_luxury.png"]]];
 	
 	[_cardImageView setBackgroundColor:[UIColor grayColor]];
+	[_cardImageView setFrame:CGRectInset(self.view.frame, 35, 83)];
+	
 	
 	CALayer	*layer	=	_cardImageView.layer;
 	[layer setBorderColor: [[UIColor whiteColor] CGColor]];
@@ -189,7 +193,7 @@
 	
 	
 	_activateSwypButton	=	[UIButton buttonWithType:UIButtonTypeCustom];
-	UIImage *	swypActivateImage	=	[UIImage imageNamed:@"swypPhotosHud"];
+	UIImage *	swypActivateImage	=	[UIImage imageNamed:@"swypButton"];
 	[_activateSwypButton setBackgroundImage:swypActivateImage forState:UIControlStateNormal];
 	_activateSwypButton.alpha = 0;
 	[self frameActivateButtonWithSize:swypActivateImage.size];
