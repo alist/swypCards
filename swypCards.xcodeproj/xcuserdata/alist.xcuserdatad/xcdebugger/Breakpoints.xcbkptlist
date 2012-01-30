@@ -22,13 +22,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "swypCards/cardCreatorViewController.m"
-         timestampString = "349642490.006627"
+         filePath = "swypCards/PLActionSheet.m"
+         timestampString = "349646072.822486"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "72"
-         endingLineNumber = "72"
-         landmarkName = "-setupCardImageViewForCurrentStateWithImage:"
+         startingLineNumber = "50"
+         endingLineNumber = "50"
+         landmarkName = "-actionSheet:clickedButtonAtIndex:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

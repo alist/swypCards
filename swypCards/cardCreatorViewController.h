@@ -25,7 +25,7 @@ typedef enum{
 }cardCreatorCreationStep;
 
 
-@interface cardCreatorViewController : UIViewController <swypContentDataSourceProtocol, swypConnectionSessionDataDelegate, UITextFieldDelegate>{
+@interface cardCreatorViewController : UIViewController <swypContentDataSourceProtocol, swypConnectionSessionDataDelegate, UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UIActionSheetDelegate>{
 	cardCreatorCreationStep			_currentStep;
 	
 	Card *							_cardInCreation;
@@ -41,6 +41,11 @@ typedef enum{
 	IBOutlet UITextField *			_signatureField;
 	
 	UIButton *						_activateSwypButton;
+	
+	UIImagePickerController *		_imagePickerController;
+	UIPopoverController *			_imagePickerPopover;	
+	
+
 }
 
 -(id) initWithSwypWorkspace:(swypWorkspaceViewController*)workspace objectContext:(NSManagedObjectContext*)context cardCreatorDelegate:(id<cardCreatorViewControllerDelegate>)delegate;
@@ -51,4 +56,6 @@ typedef enum{
 -(void)frameActivateButtonWithSize:(CGSize)theSize ;
 -(void) setupCardImageViewForCurrentStateWithImage:(UIImage*)image;
 -(UIImage*)	constrainImage:(UIImage*)image toSize:(CGSize)maxSize;
+
+-(UIImagePickerController *)	imagePickerController;
 @end

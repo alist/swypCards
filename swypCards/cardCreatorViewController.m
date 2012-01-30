@@ -17,6 +17,37 @@
 	[self presentModalViewController:_swypWorkspace animated:TRUE];
 }
 
+-(void)addPhotoButtonTapped:(id)sender{
+	
+	
+	UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Photo Libary", @"Card Creator"), nil];
+
+	if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+		[sheet addButtonWithTitle: NSLocalizedString(@"Camera", @"Card Creator")];
+	}
+	
+	[sheet addButtonWithTitle:NSLocalizedString(@"Cancel", @"UIAlertView hide")];
+	[sheet setCancelButtonIndex:[sheet numberOfButtons]-1];
+
+	if (deviceIsPad){
+		[sheet showFromBarButtonItem:self.navigationItem.rightBarButtonItem animated:NO];
+	}else{
+		[sheet showInView:self.view];
+	}
+	
+	
+}
+
+
+-(UIImagePickerController*)imagePickerController{
+	if (_imagePickerController == nil){
+		_imagePickerController = [[UIImagePickerController alloc] init];
+		[_imagePickerController setDelegate:self];
+		[_imagePickerController setAllowsEditing:TRUE];
+	}
+	return _imagePickerController;
+}
+
 
 #pragma mark - View Setup
 -(void)	transitionToStep:(cardCreatorCreationStep)step{
@@ -53,6 +84,7 @@
 		case cardCreatorCreationStepFinished:
 			break;
 		case cardCreatorCreationStepAddSignature:
+			self.navigationItem.rightBarButtonItem.enabled = FALSE;
 			_cardLabel.text	=	NSLocalizedString(@"let them know it was you!", @"sign card on step three");
 			[UIView animateWithDuration:.75 animations:^{_signatureField.alpha = 1;} completion:^(BOOL completed){
 				[_signatureField becomeFirstResponder];
@@ -160,6 +192,12 @@
 	[_signatureField setAlpha:0];
 	[_signatureField setHidden:FALSE];
 	[_signatureField setDelegate:self];
+	
+	
+	
+	[self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(addPhotoButtonTapped:)]];
+	
+	[self setTitle:NSLocalizedString(@"New Card", @"On card creator")];
 	
 	[self setupViewForStep:_currentStep];
 }
@@ -336,6 +374,79 @@
 }
 -(id<swypContentDataSourceDelegate>)	datasourceDelegate{
 	return nil;
+}
+
+
+#pragma mark UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+	UIImage * selectedImage	=	[info valueForKey:UIImagePickerControllerEditedImage];
+	if (selectedImage == nil){
+		selectedImage = [info valueForKey:UIImagePickerControllerOriginalImage];
+	}
+	
+	if (_imagePickerPopover){
+		[_imagePickerPopover dismissPopoverAnimated:TRUE];
+	}else{
+		[self dismissModalViewControllerAnimated:TRUE];
+	}
+	
+	if (selectedImage == nil)
+		return;
+	switch (_currentStep) {
+		case cardCreatorCreationStepAddCover:
+			[_cardInCreation setCoverImage:UIImageJPEGRepresentation(selectedImage, .9)];
+			break;
+		case cardCreatorCreationStepAddInside:
+			[_cardInCreation setInsideImage:UIImageJPEGRepresentation(selectedImage, .9)];
+			break;
+			
+		default:
+			break;
+	}
+	[self setupViewForStep:_currentStep];
+
+	
+}
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+	if (_imagePickerPopover){
+		[_imagePickerPopover dismissPopoverAnimated:TRUE];
+	}else{
+		[self dismissModalViewControllerAnimated:TRUE];
+	}
+}
+
+#pragma mark UIActionSheetDelegate
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+	
+	NSUInteger buttonCount	=	[actionSheet numberOfButtons];
+	if (buttonIndex +1 == buttonCount){
+		return;
+	}
+	if (buttonCount == 3){
+		if (buttonIndex +1 == 2){
+			[[self imagePickerController] setSourceType:UIImagePickerControllerSourceTypeCamera];
+		}else{
+			[[self imagePickerController] setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+		}
+
+	}else{
+		[[self imagePickerController] setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+	}
+		
+	if (deviceIsPad){
+		if (_imagePickerPopover == nil){
+			_imagePickerPopover = [[UIPopoverController alloc] initWithContentViewController:[self imagePickerController]];
+		}
+		
+		if ([_imagePickerPopover isPopoverVisible]){
+			[_imagePickerPopover dismissPopoverAnimated:TRUE];
+		}else{
+			[_imagePickerPopover presentPopoverFromBarButtonItem:self.navigationItem.rightBarButtonItem permittedArrowDirections:UIPopoverArrowDirectionUp animated:FALSE];		
+		}
+	}else{
+		[self presentModalViewController:[self imagePickerController] animated:TRUE];
+	}
+	
 }
 
 @end
