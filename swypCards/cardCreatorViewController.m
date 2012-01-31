@@ -349,10 +349,10 @@
 		case cardCreatorCreationStepAddInside:
 			[_cardInCreation setInsideImage:UIImageJPEGRepresentation(imageReceived, .9)];
 			break;
-			
 		default:
 			break;
 	}
+	[self dismissModalViewControllerAnimated:TRUE];
 	[self setupViewForStep:_currentStep];
 }
 
