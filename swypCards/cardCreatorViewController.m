@@ -43,7 +43,6 @@
 	if (_imagePickerController == nil){
 		_imagePickerController = [[UIImagePickerController alloc] init];
 		[_imagePickerController setDelegate:self];
-		[_imagePickerController setAllowsEditing:TRUE];
 	}
 	return _imagePickerController;
 }
