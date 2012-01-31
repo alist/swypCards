@@ -149,6 +149,7 @@
 		_currentCardState	=	cardViewStateCover;
         // Update the view.
         [self configureView];
+		[_delegate datasourceSignificantlyModifiedContent:self];
     }
 
     if (self.masterPopoverController != nil) {
