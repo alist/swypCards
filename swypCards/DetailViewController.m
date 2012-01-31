@@ -30,11 +30,11 @@
 
 -(void)frameActivateButtonWithSize:(CGSize)theSize {
 	CGSize thisViewSize	=	[[self view] size];
-	if (deviceIsPad){
-	    [_activateSwypButton setFrame:CGRectMake(((thisViewSize.width)-theSize.width)/2, thisViewSize.height-theSize.height, theSize.width, theSize.height)];	
-	}else{
+//	if (deviceIsPad){
+//	    [_activateSwypButton setFrame:CGRectMake(((thisViewSize.width)-theSize.width)/2, thisViewSize.height-theSize.height, theSize.width, theSize.height)];	
+//	}else{
 		[_activateSwypButton setFrame:CGRectMake((thisViewSize.width-theSize.width), (thisViewSize.height-theSize.height), theSize.width, theSize.height)];
-	}
+//	}
 }
 
 
