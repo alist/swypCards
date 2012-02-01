@@ -101,7 +101,10 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-	[[_swypWorkspace contentManager] setContentDataSource:self];
+	
+	if (deviceIsPhone_ish){
+		[[_swypWorkspace contentManager] setContentDataSource:self];
+	}
 	[self frameActivateButtonWithSize:_iPhoneModeSwypPromptButton.size];
 	[UIView animateWithDuration:.5 animations:^{
 		_iPhoneModeSwypPromptButton.alpha = 1;
