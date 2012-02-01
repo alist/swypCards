@@ -24,7 +24,7 @@
 
 #pragma mark - swyp
 -(void) activateSwypButtonPressed:(id)sender{
-	[self presentModalViewController:[self swypWorkspace] animated:TRUE];
+	[[self swypWorkspace] presentContentWorkspaceAtopViewController:self];
 }
 
 -(void)frameActivateButtonWithSize:(CGSize)theSize {
@@ -375,7 +375,7 @@
 #pragma mark - swypWorkspaceViewController
 -(swypWorkspaceViewController*)swypWorkspace{
 	if (_swypWorkspace == nil){
-		_swypWorkspace	=	[[swypWorkspaceViewController alloc] initWithWorkspaceDelegate:self];
+		_swypWorkspace	=	[[swypWorkspaceViewController alloc] init];
 		[_swypWorkspace.view setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
 		[_swypWorkspace.view setFrame:self.view.bounds];
 		
@@ -418,6 +418,8 @@
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         } 	
+		
+		[self dismissModalViewControllerAnimated:TRUE];
 	}
 }
 

@@ -14,7 +14,7 @@
 
 #pragma mark view interaction
 -(void) activateSwypButtonPressed:(id)sender{
-	[self presentModalViewController:_swypWorkspace animated:TRUE];
+	[_swypWorkspace presentContentWorkspaceAtopViewController:self];
 }
 
 -(void)addPhotoButtonTapped:(id)sender{
@@ -330,9 +330,8 @@
 	return [NSArray arrayWithObjects:[NSString imageJPEGFileType],[NSString imagePNGFileType], nil];
 }
 
--(BOOL) delegateWillHandleDiscernedStream:(swypDiscernedInputStream*)discernedStream wantsAsData:(BOOL *)wantsProvidedAsNSData inConnectionSession:(swypConnectionSession*)session{
-	if ([[self supportedFileTypesForReceipt] containsObject:[discernedStream streamType]]){
-		*wantsProvidedAsNSData = TRUE;
+-(BOOL) delegateWillReceiveDataFromDiscernedStream:(swypDiscernedInputStream *)discernedStream ofType:(NSString *)streamType inConnectionSession:(swypConnectionSession *)session{
+	if ([[self supportedFileTypesForReceipt] containsObject:streamType]){
 		return TRUE;
 	}
 	return FALSE;
@@ -358,21 +357,7 @@
 
 #pragma mark swypContentDataSourceProtocol
 - (NSArray*)		idsForAllContent{
-	return nil;
-}
-- (UIImage *)		iconImageForContentWithID: (NSString*)contentID ofMaxSize:(CGSize)maxIconSize{
-	return nil;
-}
-- (NSArray*)		supportedFileTypesForContentWithID: (NSString*)contentID{
-	return nil;
-}
-- (NSInputStream*)	inputStreamForContentWithID: (NSString*)contentID fileType:	(swypFileTypeString*)type	length: (NSUInteger*)contentLengthDestOrNULL;{
-	return nil;
-}
--(void)	setDatasourceDelegate:			(id<swypContentDataSourceDelegate>)delegate{
-}
--(id<swypContentDataSourceDelegate>)	datasourceDelegate{
-	return nil;
+	return nil; //nil on this method just states we don't export data
 }
 
 

@@ -13,7 +13,7 @@
 
 #import <CoreData/CoreData.h>
 
-@interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate, cardCreatorViewControllerDelegate, swypWorkspaceDelegate, swypContentDataSourceProtocol, swypConnectionSessionDataDelegate>{
+@interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate, cardCreatorViewControllerDelegate, swypContentDataSourceProtocol, swypConnectionSessionDataDelegate>{
 	swypWorkspaceViewController *	_swypWorkspace;
 	
 	UIButton *	_iPhoneModeSwypPromptButton;

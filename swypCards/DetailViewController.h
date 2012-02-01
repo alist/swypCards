@@ -14,7 +14,7 @@ typedef enum{
 	cardViewStateInside
 }cardViewState;
 
-@interface DetailViewController : UIViewController <UISplitViewControllerDelegate,swypContentDataSourceProtocol, swypConnectionSessionDataDelegate>{
+@interface DetailViewController : UIViewController <UISplitViewControllerDelegate,swypContentDataSourceProtocol, swypConnectionSessionDataDelegate, swypSwypableContentSuperviewContentDelegate>{
 	
 	__weak id<swypContentDataSourceDelegate>	_delegate;
 	

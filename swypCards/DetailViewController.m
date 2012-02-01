@@ -25,7 +25,7 @@
 
 #pragma mark - User Interface Cruft
 -(void) activateSwypButtonPressed:(id)sender{
-	[self presentModalViewController:_swypWorkspace animated:TRUE];
+	[_swypWorkspace presentContentWorkspaceAtopViewController:self];
 }
 
 -(void)frameActivateButtonWithSize:(CGSize)theSize {
@@ -175,6 +175,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+	//You definitely DO NOT want to set this in the nib creation routine... it only inits the parent view.
+	swypSwypableContentSuperview * contentSuperView	=	[[swypSwypableContentSuperview alloc] initWithContentDelegate:self workspaceDelegate:[self swypWorkspace] frame:self.view.frame];
+	
+	//just swap from the nib created view
+	for (UIView * view in [self.view subviews]){
+		[contentSuperView addSubview:view];
+	}
+	self.view = contentSuperView;
+	
 	[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"fake_luxury.png"]]];
 	
 	[_cardImageView setBackgroundColor:[UIColor grayColor]];
@@ -314,6 +324,19 @@
 }
 
 #pragma mark - swyp
+#pragma mark swypSwypableContentSuperviewContentDelegate
+-(NSString*)contentIDForSwypableSubview:(UIView *)view withinSwypableContentSuperview:(swypSwypableContentSuperview *)superview{
+	NSArray * content = [self idsForAllContent];
+	return [content objectAtIndex:0];
+}
+-(BOOL)subview:(UIView *)subview isSwypableWithSwypableContentSuperview:(swypSwypableContentSuperview *)superview{
+	if (subview == _cardImageView){
+		NSArray * content = [self idsForAllContent];
+		return (ArrayHasItems(content));
+	}
+	return FALSE;
+}
+
 #pragma mark swypConnectionSessionDataDelegate
 -(NSArray*)	supportedFileTypesForReceipt{
 	
@@ -340,6 +363,8 @@
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         } 	
+		
+		[self dismissModalViewControllerAnimated:TRUE];
 	}
 }
 

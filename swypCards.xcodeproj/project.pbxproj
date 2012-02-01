@@ -55,6 +55,7 @@
 		7902D86A14D5610D00C71731 /* Entitlements.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 7902D86914D5610D00C71731 /* Entitlements.entitlements */; };
 		798A80C314D724FF00504333 /* swypButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 798A80C114D724FF00504333 /* swypButton.png */; };
 		798A80C414D724FF00504333 /* swypButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 798A80C214D724FF00504333 /* swypButton@2x.png */; };
+		79CE449C14D8EB00009EA4C0 /* swypWorkspaceBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 79CE449B14D8EB00009EA4C0 /* swypWorkspaceBackground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		7902D86914D5610D00C71731 /* Entitlements.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Entitlements.entitlements; path = ../Entitlements.entitlements; sourceTree = "<group>"; };
 		798A80C114D724FF00504333 /* swypButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swypButton.png; sourceTree = "<group>"; };
 		798A80C214D724FF00504333 /* swypButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "swypButton@2x.png"; sourceTree = "<group>"; };
+		79CE449B14D8EB00009EA4C0 /* swypWorkspaceBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swypWorkspaceBackground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +292,7 @@
 		7902D79E14D53A0C00C71731 /* swypBundleResources */ = {
 			isa = PBXGroup;
 			children = (
+				79CE449B14D8EB00009EA4C0 /* swypWorkspaceBackground.png */,
 				7902D79F14D53A0C00C71731 /* bluetooth-logo-enabled.png */,
 				7902D7A014D53A0C00C71731 /* bluetooth-logo-enabled@2x.png */,
 				7902D7A114D53A0C00C71731 /* cloud-logo-enabled.png */,
@@ -413,6 +416,7 @@
 				7902D86A14D5610D00C71731 /* Entitlements.entitlements in Resources */,
 				798A80C314D724FF00504333 /* swypButton.png in Resources */,
 				798A80C414D724FF00504333 /* swypButton@2x.png in Resources */,
+				79CE449C14D8EB00009EA4C0 /* swypWorkspaceBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
