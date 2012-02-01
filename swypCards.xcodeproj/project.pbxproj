@@ -33,8 +33,6 @@
 		7902D79D14D537E900C71731 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7902D79C14D537E800C71731 /* DetailViewController.xib */; };
 		7902D7B114D53A0C00C71731 /* bluetooth-logo-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D79F14D53A0C00C71731 /* bluetooth-logo-enabled.png */; };
 		7902D7B214D53A0C00C71731 /* bluetooth-logo-enabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7A014D53A0C00C71731 /* bluetooth-logo-enabled@2x.png */; };
-		7902D7B314D53A0C00C71731 /* cloud-logo-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7A114D53A0C00C71731 /* cloud-logo-enabled.png */; };
-		7902D7B414D53A0C00C71731 /* cloud-logo-enabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7A214D53A0C00C71731 /* cloud-logo-enabled@2x.png */; };
 		7902D7B514D53A0C00C71731 /* connectivity-bluetooth-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7A314D53A0C00C71731 /* connectivity-bluetooth-disabled.png */; };
 		7902D7B614D53A0C00C71731 /* connectivity-bluetooth-disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7A414D53A0C00C71731 /* connectivity-bluetooth-disabled@2x.png */; };
 		7902D7B714D53A0C00C71731 /* connectivity-bluetooth-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7A514D53A0C00C71731 /* connectivity-bluetooth-enabled.png */; };
@@ -43,8 +41,6 @@
 		7902D7BA14D53A0C00C71731 /* connectivity-world-disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7A814D53A0C00C71731 /* connectivity-world-disabled@2x.png */; };
 		7902D7BB14D53A0C00C71731 /* connectivity-world-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7A914D53A0C00C71731 /* connectivity-world-enabled.png */; };
 		7902D7BC14D53A0C00C71731 /* connectivity-world-enabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7AA14D53A0C00C71731 /* connectivity-world-enabled@2x.png */; };
-		7902D7BD14D53A0C00C71731 /* down_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7AB14D53A0C00C71731 /* down_arrow.png */; };
-		7902D7BE14D53A0C00C71731 /* down_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7AC14D53A0C00C71731 /* down_arrow@2x.png */; };
 		7902D7BF14D53A0C00C71731 /* swypPromptHud.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7AD14D53A0C00C71731 /* swypPromptHud.png */; };
 		7902D7C014D53A0C00C71731 /* swypPromptHud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7AE14D53A0C00C71731 /* swypPromptHud@2x.png */; };
 		7902D7C114D53A0C00C71731 /* top_curl.png in Resources */ = {isa = PBXBuildFile; fileRef = 7902D7AF14D53A0C00C71731 /* top_curl.png */; };
@@ -111,8 +107,6 @@
 		7902D79C14D537E800C71731 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		7902D79F14D53A0C00C71731 /* bluetooth-logo-enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bluetooth-logo-enabled.png"; sourceTree = "<group>"; };
 		7902D7A014D53A0C00C71731 /* bluetooth-logo-enabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bluetooth-logo-enabled@2x.png"; sourceTree = "<group>"; };
-		7902D7A114D53A0C00C71731 /* cloud-logo-enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-logo-enabled.png"; sourceTree = "<group>"; };
-		7902D7A214D53A0C00C71731 /* cloud-logo-enabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-logo-enabled@2x.png"; sourceTree = "<group>"; };
 		7902D7A314D53A0C00C71731 /* connectivity-bluetooth-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectivity-bluetooth-disabled.png"; sourceTree = "<group>"; };
 		7902D7A414D53A0C00C71731 /* connectivity-bluetooth-disabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectivity-bluetooth-disabled@2x.png"; sourceTree = "<group>"; };
 		7902D7A514D53A0C00C71731 /* connectivity-bluetooth-enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectivity-bluetooth-enabled.png"; sourceTree = "<group>"; };
@@ -121,8 +115,6 @@
 		7902D7A814D53A0C00C71731 /* connectivity-world-disabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectivity-world-disabled@2x.png"; sourceTree = "<group>"; };
 		7902D7A914D53A0C00C71731 /* connectivity-world-enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectivity-world-enabled.png"; sourceTree = "<group>"; };
 		7902D7AA14D53A0C00C71731 /* connectivity-world-enabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectivity-world-enabled@2x.png"; sourceTree = "<group>"; };
-		7902D7AB14D53A0C00C71731 /* down_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down_arrow.png; sourceTree = "<group>"; };
-		7902D7AC14D53A0C00C71731 /* down_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down_arrow@2x.png"; sourceTree = "<group>"; };
 		7902D7AD14D53A0C00C71731 /* swypPromptHud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swypPromptHud.png; sourceTree = "<group>"; };
 		7902D7AE14D53A0C00C71731 /* swypPromptHud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "swypPromptHud@2x.png"; sourceTree = "<group>"; };
 		7902D7AF14D53A0C00C71731 /* top_curl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_curl.png; sourceTree = "<group>"; };
@@ -295,8 +287,6 @@
 				79CE449B14D8EB00009EA4C0 /* swypWorkspaceBackground.png */,
 				7902D79F14D53A0C00C71731 /* bluetooth-logo-enabled.png */,
 				7902D7A014D53A0C00C71731 /* bluetooth-logo-enabled@2x.png */,
-				7902D7A114D53A0C00C71731 /* cloud-logo-enabled.png */,
-				7902D7A214D53A0C00C71731 /* cloud-logo-enabled@2x.png */,
 				7902D7A314D53A0C00C71731 /* connectivity-bluetooth-disabled.png */,
 				7902D7A414D53A0C00C71731 /* connectivity-bluetooth-disabled@2x.png */,
 				7902D7A514D53A0C00C71731 /* connectivity-bluetooth-enabled.png */,
@@ -305,8 +295,6 @@
 				7902D7A814D53A0C00C71731 /* connectivity-world-disabled@2x.png */,
 				7902D7A914D53A0C00C71731 /* connectivity-world-enabled.png */,
 				7902D7AA14D53A0C00C71731 /* connectivity-world-enabled@2x.png */,
-				7902D7AB14D53A0C00C71731 /* down_arrow.png */,
-				7902D7AC14D53A0C00C71731 /* down_arrow@2x.png */,
 				7902D7AD14D53A0C00C71731 /* swypPromptHud.png */,
 				7902D7AE14D53A0C00C71731 /* swypPromptHud@2x.png */,
 				7902D7AF14D53A0C00C71731 /* top_curl.png */,
@@ -394,8 +382,6 @@
 				7902D79D14D537E900C71731 /* DetailViewController.xib in Resources */,
 				7902D7B114D53A0C00C71731 /* bluetooth-logo-enabled.png in Resources */,
 				7902D7B214D53A0C00C71731 /* bluetooth-logo-enabled@2x.png in Resources */,
-				7902D7B314D53A0C00C71731 /* cloud-logo-enabled.png in Resources */,
-				7902D7B414D53A0C00C71731 /* cloud-logo-enabled@2x.png in Resources */,
 				7902D7B514D53A0C00C71731 /* connectivity-bluetooth-disabled.png in Resources */,
 				7902D7B614D53A0C00C71731 /* connectivity-bluetooth-disabled@2x.png in Resources */,
 				7902D7B714D53A0C00C71731 /* connectivity-bluetooth-enabled.png in Resources */,
@@ -404,8 +390,6 @@
 				7902D7BA14D53A0C00C71731 /* connectivity-world-disabled@2x.png in Resources */,
 				7902D7BB14D53A0C00C71731 /* connectivity-world-enabled.png in Resources */,
 				7902D7BC14D53A0C00C71731 /* connectivity-world-enabled@2x.png in Resources */,
-				7902D7BD14D53A0C00C71731 /* down_arrow.png in Resources */,
-				7902D7BE14D53A0C00C71731 /* down_arrow@2x.png in Resources */,
 				7902D7BF14D53A0C00C71731 /* swypPromptHud.png in Resources */,
 				7902D7C014D53A0C00C71731 /* swypPromptHud@2x.png in Resources */,
 				7902D7C114D53A0C00C71731 /* top_curl.png in Resources */,
