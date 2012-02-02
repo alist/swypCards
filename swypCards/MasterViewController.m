@@ -379,14 +379,7 @@
 -(swypWorkspaceViewController*)swypWorkspace{
 	if (_swypWorkspace == nil){
 		_swypWorkspace	=	[[swypWorkspaceViewController alloc] init];
-		[_swypWorkspace.view setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
-		[_swypWorkspace.view setFrame:self.view.bounds];
 		
-		
-		swypPhotoPlayground *	contentDisplayController	=	[[swypPhotoPlayground alloc] initWithPhotoSize:CGSizeMake(250, 200)];
-		
-		[[[self swypWorkspace] contentManager] setContentDisplayController:contentDisplayController];
-
 	}
 	return _swypWorkspace;
 }
